@@ -20,7 +20,7 @@ jobs:
           command: "echo Hello, World!"
       - run:
           name: "Run file setup script"
-          command: bash ../script/install_dependencies.sh
+          command: bash ./scripts/install_dependencies.sh
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
