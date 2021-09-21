@@ -7,15 +7,26 @@ jobs:
   say-hello:
     # Specify the execution environment.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+    #This is executor
     docker:
-      - image: cimg/base:stable
+      - image: cimg/base:stable #cimg/base is an Ubuntu Docker image created by CircleCI
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+    #This is commands
     steps:
       - checkout
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+      - run:
+          name: Run file setup script
+          command: bash script/install_dependencies.sh
+       - run:
+          name: Start server
+          command: bash script/start_server.sh
+       - run:
+          name: Stop server
+          command: bash script/stop_server.sh
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
