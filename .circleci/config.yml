@@ -29,13 +29,13 @@ jobs:
           command: bash ./scripts/setup_apache.sh
       - run:
           name: "Output environment variable"
-          command: "echo CIRCLE_BUILD_URL=**REDACTED**"
+          command: echo $CIRCLE_BUILD_URL
       - run:
           name: "Output my variable"
-          command: "echo IMAGETAG"
+          command: echo $IMAGETAG
       - run:
           name: "Output pipeline variable"
-          command: "echo pipeline.id"
+          command: echo $pipeline.id
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
