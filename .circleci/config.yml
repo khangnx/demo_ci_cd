@@ -30,7 +30,11 @@ jobs:
       - run:
           name: "Output environment variable"
           command: "echo CIRCLE_BRANCH"
+      - run:
+          name: "Output my variable"
           command: "echo IMAGETAG"
+      - run:
+          name: "Output pipeline variable"
           command: "echo pipeline.id"
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -38,5 +42,3 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
-      run:
-        name: "See varible"
